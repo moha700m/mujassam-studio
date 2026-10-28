@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مجسّم ستوديو — Mujassam 3D Studio</title>
+<meta name="description" content="استوديو تصميم مجسمات ثلاثية الأبعاد — نموذج تجريبي">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./three.module.js"}}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
+<div class="cursor" aria-hidden="true"></div>
+<header class="nav">
+  <a href="#top" class="logo"><span class="logo-cube"></span><span data-i18n="brand">مجسّم</span></a>
+  <nav aria-label="main"><a href="#works" data-i18n="nWorks">الأعمال</a><a href="#process" data-i18n="nProcess">طريقتنا</a><a href="#services" data-i18n="nServices">الخدمات</a><a href="#pricing" data-i18n="nPricing">الأسعار</a><a href="#contact" data-i18n="nContact">تواصل</a></nav>
+  <button id="lang" class="lang" aria-label="Switch language">EN</button>
+</header>
+<main id="main">
+<section id="top" class="hero">
+  <canvas id="hero3d" aria-label="مجسم ثلاثي الأبعاد تفاعلي"></canvas>
+  <div class="hero-txt">
+    <p class="eyebrow" data-i18n="eyebrow">استوديو مجسمات ثلاثية الأبعاد · نموذج تجريبي</p>
+    <h1 class="headline"><span data-i18n="h1a">نحوّل فكرتك</span><br><span class="grad" data-i18n="h1b">لمجسّم ينبض بالحياة</span></h1>
+    <p class="lead" data-i18n="lead">منتجات، معمار، شخصيات ومجوهرات — نصمّمها، نلوّنها، ونصيّرها صور وفيديو تخطف العين.</p>
+    <div class="cta-row"><a href="#works" class="btn primary" data-i18n="ctaWorks">شوف أعمالنا</a><a href="#contact" class="btn ghost" data-i18n="ctaQuote">اطلب عرض سعر</a></div>
+    <div class="swatches" role="group" aria-label="Material"><span data-i18n="mat">الخامة:</span>
+      <button data-mat="chrome" class="on" data-i18n="mChrome">كروم</button><button data-mat="gold" data-i18n="mGold">ذهب</button><button data-mat="clay" data-i18n="mClay">صلصال</button><button data-mat="glass" data-i18n="mGlass">زجاج</button></div>
+  </div>
+  <p class="hint" data-i18n="hint">اسحب المجسّم وحرّك الماوس ↻</p>
+</section>
+<div class="marquee" aria-hidden="true"><div class="track"><span>Modeling ✦ نمذجة ✦ Texturing ✦ تلوين وخامات ✦ Rendering ✦ تصيير ✦ Animation ✦ تحريك ✦ 3D Printing ✦ طباعة ثلاثية ✦ </span><span>Modeling ✦ نمذجة ✦ Texturing ✦ تلوين وخامات ✦ Rendering ✦ تصيير ✦ Animation ✦ تحريك ✦ 3D Printing ✦ طباعة ثلاثية ✦ </span></div></div>
+
+<section id="works" class="sec">
+  <h2 class="reveal" data-i18n="worksT">أعمال مختارة</h2>
+  <p class="sub reveal" data-i18n="worksS">كل المشاريع هنا نماذج تجريبية مولّدة برمجياً. اضغط على أي عمل لتقلّبه بنفسك.</p>
+  <div class="filters" role="tablist">
+    <button class="on" data-f="all" data-i18n="fAll">الكل</button><button data-f="products" data-i18n="fProducts">منتجات</button><button data-f="architecture" data-i18n="fArch">معمار</button><button data-f="characters" data-i18n="fChar">شخصيات</button><button data-f="jewelry" data-i18n="fJewel">مجوهرات</button>
+  </div>
+  <div id="grid" class="grid"></div>
+</section>
+
+<section id="stats" class="stats">
+  <div class="reveal"><b data-count="140">0</b><span data-i18n="s1">مجسّم منفّذ</span></div>
+  <div class="reveal"><b data-count="38">0</b><span data-i18n="s2">عميل (تجريبي)</span></div>
+  <div class="reveal"><b data-count="4">0</b><span data-i18n="s3">مجالات تخصص</span></div>
+  <div class="reveal"><b data-count="72">0</b><span data-i18n="s4">ساعة متوسط التسليم</span></div>
+</section>
+
+<section id="process" class="sec">
+  <h2 class="reveal" data-i18n="procT">من الفكرة للصورة النهائية</h2>
+  <ol class="timeline">
+    <li class="reveal"><i>01</i><h3 data-i18n="p1">نحت</h3><p data-i18n="p1d">نبني الشكل الأساسي ونضبط النسب والتفاصيل الدقيقة.</p></li>
+    <li class="reveal"><i>02</i><h3 data-i18n="p2">خامات وتلوين</h3><p data-i18n="p2d">معدن، خشب، قماش، زجاج — كل سطح بخامته الواقعية.</p></li>
+    <li class="reveal"><i>03</i><h3 data-i18n="p3">إضاءة وتصيير</h3><p data-i18n="p3d">إضاءة استوديو وصور عالية الدقة جاهزة للإعلان.</p></li>
+    <li class="reveal"><i>04</i><h3 data-i18n="p4">تسليم</h3><p data-i18n="p4d">ملفات GLB/OBJ/STL، صور، وفيديو ٣٦٠°.</p></li>
+  </ol>
+</section>
+
+<section id="services" class="sec">
+  <h2 class="reveal" data-i18n="servT">خدماتنا</h2>
+  <div class="cards3">
+    <article class="card reveal tilt"><span class="ico">◆</span><h3 data-i18n="sv1">تصيير المنتجات</h3><p data-i18n="sv1d">صور منتجات للمتاجر والإعلانات بدون تصوير فوتوغرافي.</p></article>
+    <article class="card reveal tilt"><span class="ico">▲</span><h3 data-i18n="sv2">تصوّر معماري</h3><p data-i18n="sv2d">واجهات وداخليات ومجسمات مشاريع قبل التنفيذ.</p></article>
+    <article class="card reveal tilt"><span class="ico">●</span><h3 data-i18n="sv3">شخصيات ومجسمات</h3><p data-i18n="sv3d">شخصيات للألعاب والهوية وجاهزة للطباعة.</p></article>
+    <article class="card reveal tilt"><span class="ico">✦</span><h3 data-i18n="sv4">مجوهرات</h3><p data-i18n="sv4d">نماذج دقيقة للصياغة والعرض التفاعلي في المتجر.</p></article>
+    <article class="card reveal tilt"><span class="ico">↻</span><h3 data-i18n="sv5">عارض 3D للويب</h3><p data-i18n="sv5d">مجسّمك يتقلّب داخل موقعك مثل ما تشوف هنا.</p></article>
+    <article class="card reveal tilt"><span class="ico">▶</span><h3 data-i18n="sv6">موشن ثلاثي الأبعاد</h3><p data-i18n="sv6d">فيديوهات قصيرة للسوشال ميديا وإطلاق المنتجات.</p></article>
+  </div>
+</section>
+
+<section id="case" class="sec case">
+  <div class="reveal"><p class="eyebrow" data-i18n="caseE">دراسة حالة · مثال تجريبي</p><h2 data-i18n="caseT">إطلاق عطر "نجد" — مشروع افتراضي</h2><p data-i18n="caseD">بدل جلسة تصوير، صمّمنا الزجاجة ثلاثية الأبعاد وطلّعنا ٢٤ صورة وفيديو ٣٦٠° خلال أسبوع.</p></div>
+  <div class="metrics reveal"><div><b>-60%</b><span data-i18n="m1">تكلفة الإنتاج</span></div><div><b>7</b><span data-i18n="m2">أيام للتسليم</span></div><div><b>24</b><span data-i18n="m3">صورة نهائية</span></div></div>
+</section>
+
+<section class="sec">
+  <h2 class="reveal" data-i18n="testT">وش قالوا عنّا</h2>
+  <p class="sub reveal" data-i18n="testS">آراء توضيحية لعملاء افتراضيين.</p>
+  <div class="cards3">
+    <blockquote class="card reveal"><p data-i18n="t1">"الصور طلعت أحلى من التصوير الحقيقي، وتعديلها كان سريع."</p><cite data-i18n="t1c">— صاحبة متجر (مثال)</cite></blockquote>
+    <blockquote class="card reveal"><p data-i18n="t2">"المجسّم المعماري سهّل علينا إقناع المستثمرين."</p><cite data-i18n="t2c">— مكتب هندسي (مثال)</cite></blockquote>
+    <blockquote class="card reveal"><p data-i18n="t3">"الشخصية صارت رمز علامتنا، وطبعناها كمان."</p><cite data-i18n="t3c">— ستوديو ألعاب (مثال)</cite></blockquote>
+  </div>
+</section>
+
+<section id="pricing" class="sec">
+  <h2 class="reveal" data-i18n="priceT">باقات واضحة</h2>
+  <div class="cards3 price">
+    <article class="card reveal"><h3 data-i18n="pk1">أساسي</h3><b class="amt" data-i18n="pk1p">١٬٥٠٠ ر.س</b><ul><li data-i18n="pk1a">مجسّم واحد</li><li data-i18n="pk1b">٣ صور تصيير</li><li data-i18n="pk1c">تعديل واحد</li></ul><a href="#contact" class="btn ghost" data-i18n="choose">اختر</a></article>
+    <article class="card reveal featured"><span class="badge" data-i18n="pop">الأكثر طلباً</span><h3 data-i18n="pk2">احترافي</h3><b class="amt" data-i18n="pk2p">٤٬٥٠٠ ر.س</b><ul><li data-i18n="pk2a">٣ مجسّمات</li><li data-i18n="pk2b">١٠ صور + فيديو ٣٦٠°</li><li data-i18n="pk2c">ملف GLB للويب</li></ul><a href="#contact" class="btn primary" data-i18n="choose">اختر</a></article>
+    <article class="card reveal"><h3 data-i18n="pk3">مشروع خاص</h3><b class="amt" data-i18n="pk3p">حسب الطلب</b><ul><li data-i18n="pk3a">معمار أو حملة كاملة</li><li data-i18n="pk3b">تحريك وموشن</li><li data-i18n="pk3c">مدير مشروع</li></ul><a href="#contact" class="btn ghost" data-i18n="talk">كلّمنا</a></article>
+  </div>
+  <p class="sub" data-i18n="priceNote">الأسعار أمثلة توضيحية.</p>
+</section>
+
+<section id="contact" class="sec contact">
+  <div class="reveal"><h2 data-i18n="contT">جاهز نبدأ مجسّمك؟</h2><p data-i18n="contD">علّمنا عن فكرتك ونرجع لك بعرض سعر خلال يوم عمل.</p></div>
+  <form id="form" class="reveal" novalidate>
+    <label><span data-i18n="fName">الاسم</span><input name="name" required autocomplete="name"></label>
+    <label><span data-i18n="fEmail">البريد الإلكتروني</span><input name="email" type="email" required autocomplete="email" dir="ltr"></label>
+    <label><span data-i18n="fType">نوع المشروع</span><select name="type"><option data-i18n="fProducts">منتجات</option><option data-i18n="fArch">معمار</option><option data-i18n="fChar">شخصيات</option><option data-i18n="fJewel">مجوهرات</option></select></label>
+    <label><span data-i18n="fMsg">تفاصيل الفكرة</span><textarea name="msg" rows="4" required></textarea></label>
+    <button class="btn primary" type="submit" data-i18n="send">أرسل الطلب</button>
+    <p id="formMsg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+</main>
+<footer class="foot"><span data-i18n="foot">© 2026 مجسّم ستوديو — موقع تجريبي، كل الأعمال نماذج مولّدة برمجياً.</span><a href="#top" data-i18n="up">للأعلى ↑</a></footer>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <button class="close" aria-label="Close">✕</button>
+  <div class="mwrap"><canvas id="m3d"></canvas>
+  <div class="minfo"><p class="eyebrow" id="mCat"></p><h3 id="mTitle"></h3><p id="mDesc"></p>
+  <div class="swatches" id="mSw"></div><p class="hint2" data-i18n="drag">اسحب للتدوير · العجلة للتقريب</p></div></div>
+</dialog>
+<script type="module" src="app.js"></script>
+</body></html>
